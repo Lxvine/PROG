@@ -1,0 +1,104 @@
+
+public class Empleado {
+
+	String nif, nombre;
+	int sueldoBase, horasExtra, irpf, nHijos;
+	static int importeHoraExtra;
+	boolean casado;
+	
+	//Constructor vacío:
+	
+	public Empleado() {
+		this.nif = "";
+		this.nombre = "";
+		this.sueldoBase = 0;
+		this.horasExtra = 0;
+		this.irpf = 0;
+		this.nHijos = 0;
+		this.importeHoraExtra = 0;
+		this.casado = false;
+	}
+	
+	//Constructor con parámetros:
+	
+	public Empleado(String nif) {
+		this.nif = "35564733-F";
+	}
+	
+	//Getters
+	
+	public String getNif() {
+		return this.nif;
+	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public int getSueldoBase() {
+		return this.sueldoBase;
+	}
+	
+	public int getHorasExtra() {
+		return this.horasExtra;
+	}
+	
+	public int getIrpf() {
+		return this.irpf;
+	}
+	
+	public int getNHijos() {
+		return this.nHijos;
+	}
+
+	public int getImporteHoraExtra() {
+		return this.importeHoraExtra;
+	}
+	
+	public boolean getCasado() {
+		return this.casado;
+	}
+	
+	//Setters
+	
+	public void setNif(String nif) {
+		this.nif = nif;
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setSueldoBase(int sueldoBase) {
+		this.sueldoBase = sueldoBase;
+	}
+	
+	public void setHorasExtra(int horasExtra) {
+		this.horasExtra = horasExtra;
+	}
+	
+	public void setIrpf(int irpf) {
+		this.irpf = irpf;
+	}
+	
+	public void nHijos(int nHijos) {
+		this.nHijos = nHijos;
+	}
+	
+	public void importeHoraExtra(int importeHoraExtra) {
+		this.importeHoraExtra = importeHoraExtra;
+	}
+	
+	public void casado(boolean casado) {
+		this.casado = casado;
+	}
+	
+	//método complemento horas extras:
+	
+	public double complementoExtra() {
+		double complemento = 0;
+		complemento = this.horasExtra * 1.75;
+		return complemento;
+	}
+}
+

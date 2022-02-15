@@ -1,0 +1,29 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestEjersT2 {
+
+	@Test
+	void test1() {
+		int a = EjerciciosTema2.x;
+		int b = EjerciciosTema2.y;
+		EjerciciosTema2.Ejercicio1();
+		assertEquals (a, EjerciciosTema2.y);
+		assertEquals (b, EjerciciosTema2.x);
+	}
+	
+	@Test
+	void test2() {
+		int expected = EjerciciosTema2.Ejercicio2(14, 13, 7);
+		int actual = 14;
+		assertEquals (expected, actual);
+	}
+
+	@Test
+	void test3() {
+		double expected = EjerciciosTema2.Ejercicio3(5);
+		double actual = 
+		
+	}
+}

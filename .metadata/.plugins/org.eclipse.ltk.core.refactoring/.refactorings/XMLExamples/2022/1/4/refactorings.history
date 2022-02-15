@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;XMLExamples/DTD básico&apos; to &apos;2 - DTD básico&apos;" description="Rename resource &apos;DTD básico&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="DTD básico" name="2 - DTD básico" stamp="1643018826740" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;XMLExamples/XML básico&apos; to &apos;1 - XML básico&apos;" description="Rename resource &apos;XML básico&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="XML básico" name="1 - XML básico" stamp="1643018835222" updateReferences="true"/>
+</session>

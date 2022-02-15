@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+public class main {
+
+	private static void ejercicio1() {
+
+		// Objetos Ejercicio1:
+
+		Libro libro1 = new Libro("1212123131455", "Ken Follet", "Los Pilares de la Tierra", 502);
+		Libro libro2 = new Libro("4141251245123", "Tolkien", "El hobbit", 450);
+
+		// Mostramos su estado:
+
+		System.out.println(libro1.toString());
+		System.out.println(libro2.toString());
+
+		// Modificamos el atributo NumPags del libro1:
+
+		libro1.setNumPags(299);
+		System.out.println(libro1.toString());
+
+		// Comparamos quien tiene mas paginas:
+
+		if (libro1.getNumPags() > libro2.getNumPags()) {
+			System.out.println(libro1.getTitulo() + " tiene más páginas.");
+		} else {
+			System.out.println(libro2.getTitulo() + " tiene más páginas.");
+		}
+	}
+
+	private static void ejercicio2() {
+
+		Scanner scan = new Scanner(System.in);
+
+		String nombre, numero;
+		double tipo, importe;
+
+		// Objeto cuenta1 sin parámetros (ejecuándo el constructor por defecto):
+
+		Cuenta cuenta1 = new Cuenta();
+
+		System.out.println("Nombre: ");
+		nombre = scan.nextLine();
+		System.out.println("Número de cuenta: ");
+		numero = scan.nextLine();
+		System.out.println("Tipo de interés: ");
+		tipo = scan.nextDouble();
+		System.out.println("Saldo: ");
+		importe = scan.nextDouble();
+
+		// Objeto cuenta2 con parámetros:
+
+		Cuenta cuenta2 = new Cuenta("Paco", "94712123123513", 12.3, 543);
+
+		Cuenta cuenta3 = new Cuenta();
+
+		System.out.println(cuenta1.toString());
+		System.out.println(cuenta2.toString());
+
+	}
+
+	public static void ejercicio5() {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		String nombre;
+		int sueldoBase, horasExtra; 
+		boolean casado;
+		double irpf, importeHoraExtra;
+		
+		Empleado empleado1 = new Empleado("35567493-R", "Carlito", 999, 14, 2, 2.3, true, 12);
+		Empleado empleado2 = new Empleado();
+		
+		System.out.println("Introduzca el nombre del empleado: ");
+		empleado1.setNombre(nombre = scan.next());
+		System.out.println("Introduzca el sueldo base del empleado: ");
+		empleado1.setSueldoBase(sueldoBase = scan.nextInt());
+		
+		
+		System.out.println(empleado1.toString());
+		System.out.println(empleado2.toString());
+	}
+	
+	public static void main(String[] args) {
+
+//		ejercicio1();
+//		ejercicio2();
+		ejercicio5();
+	}
+
+}
