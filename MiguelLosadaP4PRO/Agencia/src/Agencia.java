@@ -20,6 +20,7 @@ public class Agencia {
 
 	public Agencia(String nombre) {
 		this.nombre = nombre;
+		this.pisos = generarPisos();
 	}
 
 	public Agencia() {
@@ -27,16 +28,24 @@ public class Agencia {
 		this.pisos = generarPisos();
 	}
 
-	// Getter clase Agencia:
+	// Getters clase Agencia:
 
 	public String getNombre() {
 		return this.nombre;
 	}
+	
+	public ArrayList<Piso> getPisos(){
+		return this.pisos;
+	}
 
-	// Setter clase Agencia:
+	// Setters clase Agencia:
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public void setPisos(ArrayList<Piso> pisos) {
+		this.pisos = pisos;
 	}
 
 	// Método para generar los 10 pisos por defecto:
