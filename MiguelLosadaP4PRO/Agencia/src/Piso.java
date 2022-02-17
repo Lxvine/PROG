@@ -6,16 +6,17 @@ public class Piso {
 
     private Direccion direccion;
     private int id = 0, m2;
-    private double precio;
+    private double precioVenta, precioAlquiler;
     private ArrayList<Estado> estado;
 
     //Constructor clase Piso:
 
-    public Piso(Direccion direccion, int id, int m2, double precio, ArrayList<Estado> estado) {
+    public Piso(Direccion direccion, int id, int m2, double precioVenta, double precioAlquiler, ArrayList<Estado> estado) {
         this.direccion = direccion;
         this.id = id;
         this.m2 = m2;
-        this.precio = precio;
+        this.precioVenta = precioVenta;
+        this.precioAlquiler = precioAlquiler;
         this.estado = estado; 
     }
 
@@ -33,8 +34,12 @@ public class Piso {
         return this.m2;
     }
 
-    public double getPrecio() {
-        return this.precio;
+    public double getPrecioVenta() {
+        return this.precioVenta;
+    }
+    
+    public double getPrecioAlquiler() {
+    	return this.precioAlquiler;
     }
     
     public ArrayList<Estado> getEstado(){
@@ -55,8 +60,12 @@ public class Piso {
         this.m2 = m2;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setPrecioVenta(double precioVenta) {
+        this.precioVenta = precioVenta;
+    }
+    
+    public void setPrecioAlquiler(double precioAlquiler) {
+    	this.precioAlquiler = precioAlquiler;
     }
     
     public void setEstado(ArrayList<Estado> estado) {
@@ -68,7 +77,7 @@ public class Piso {
     @Override
     public String toString() {
     	return "\nID: " + getId() + ".\n" + "Dirección: " + getDireccion() + "\n" + "Metros Cuadrados: " 
-    + getM2() + " m2.\n" + "Precio: " + getPrecio() + " €.\n" + "Estado: " + getEstado() + ".";
+    + getM2() + " m2.\n" + "Precio de venta: " + getPrecioVenta() + " €." + "\nPrecio de alquiler: " + getPrecioAlquiler() + " €.\n" + "Estado: " + getEstado() + ".";
     }
 }
 

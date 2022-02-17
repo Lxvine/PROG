@@ -3,8 +3,9 @@ public class Direccion {
 
 	//Atributos clase Direccion:
 	
-	private String calle, puerta, ciudad;
+	private String calle, ciudad;
 	private int num, piso, cp;
+	private char puerta;
 	
 	//Construcot clase Direccion:
 	
@@ -12,12 +13,12 @@ public class Direccion {
 		this.calle = "";
 		this.num = 0;
 		this.piso = 0;
-		this.puerta = "";
+		this.puerta = ' ';
 		this.cp = 0;
 		this.ciudad = "";
 	}
 	
-	public Direccion(String calle, int num, int piso, String puerta, int cp, String ciudad) {
+	public Direccion(String calle, int num, int piso, char puerta, int cp, String ciudad) {
 		this.calle = calle;
 		this.num = num;
 		this.piso = piso;
@@ -32,7 +33,7 @@ public class Direccion {
 		return this.calle;
 	} 
 	
-	public String getPuerta() {
+	public char getPuerta() {
 		return this.puerta;
 	}
 	
@@ -58,7 +59,7 @@ public class Direccion {
 		this.calle = calle;
 	}
 	
-	public void setPuerta(String puerta) {
+	public void setPuerta(char puerta) {
 		this.puerta = puerta;
 	}
 	
@@ -84,6 +85,4 @@ public class Direccion {
 	public String toString() {
 		return this.calle + ", " + this.num + ", " + this.piso + "º, " + this.puerta + ", " + this.cp + ", " + this.ciudad + ".";
 	}
-	
 }
-
