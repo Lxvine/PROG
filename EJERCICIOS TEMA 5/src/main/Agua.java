@@ -1,6 +1,6 @@
 package main;
 
-public class Agua extends Almacen{
+public class Agua extends Bebida{
 
 	//Atributos clase Agua:
 	
@@ -8,8 +8,8 @@ public class Agua extends Almacen{
 	
 	//Constructor:
 	
-	public Agua(int id, int liters, double price, String brand, int sugarPercentage, boolean promotion, String origin) {
-		super(id, liters, price, brand);
+	public Agua(int liters, double price, String brand, int sugarPercentage, boolean promotion, String origin) {
+		super(liters, price, brand);
 		this.origin = origin;
 	}
 	
@@ -21,6 +21,5 @@ public class Agua extends Almacen{
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
-	
 	
 }

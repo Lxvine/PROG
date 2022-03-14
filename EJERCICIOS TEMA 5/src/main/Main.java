@@ -150,7 +150,11 @@ public class Main {
 	}
 	
 	public static void ejercicio5() {
+		Almacen almacen = new Almacen();
 		
+		Bebida b1 = new Bebida(1, 0.95, "Coca Cola");
+		
+		almacen.addProduct(b1);
 	}
 
 	public static void main(String[] args) {

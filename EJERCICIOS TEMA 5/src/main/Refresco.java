@@ -1,6 +1,6 @@
 package main;
 
-public class Refresco extends Almacen{
+public class Refresco extends Bebida{
 
 	//Atributos clase Refresco:
 	
@@ -9,8 +9,8 @@ public class Refresco extends Almacen{
 	
 	//Constructor clase Refresco:
 	
-	public Refresco(int id, int liters, double price, String brand, int sugarPercentage, boolean promotion) {
-		super(id, liters, price, brand);
+	public Refresco(int liters, double price, String brand, int sugarPercentage, boolean promotion) {
+		super(liters, price, brand);
 		this.sugarPercentage = sugarPercentage;
 		this.promotion = promotion;
 	}
@@ -30,6 +30,5 @@ public class Refresco extends Almacen{
 	public void setPromotion(boolean promotion) {
 		this.promotion = promotion;
 	}
-	
 	
 }
