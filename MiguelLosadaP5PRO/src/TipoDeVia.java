@@ -1,0 +1,5 @@
+public enum TipoDeVia {
+
+	CALLE, AVENIDA, PLAZA, CAMINO, CARRETERA, PASEO
+	
+}
