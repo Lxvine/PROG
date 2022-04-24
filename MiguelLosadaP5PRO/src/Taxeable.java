@@ -5,8 +5,8 @@ public interface Taxeable {
 	
 	public double sumImpuestosVenta();
 	
-	static final int ITP = 8;
+	public static final int ITP = 8;
 	
-	static final int IVA = 10;
+	public static final int IVA = 10;
 	
 }

@@ -3,25 +3,25 @@
 //Diseñar un algoritmo que convierta una temperatura leída en grados Fahrenheit
 //a grados Celsius, usando la fórmula: C = (5/9) * (F-32)
 //
-//import java.util.Scanner;
-//
-//public class juja101 {
+import java.util.Scanner;
+
+public class juja101 {
 		
-//		float far = 0f, cel = 0f;
-//		
-//		Scanner scan =new Scanner(System.in);
-//		
-//		System.out.println("Introduzca los grados Fahrenheit: ");
-//		
-//		far=scan.nextFloat();
-//		
-//		cel = (5.0f/9.0f)*(far-32);
-//		
-//		System.out.println("El valor en grados Celsius es: " + cel);
-//		scan.close();
-//
-//	}
-//}
+		float far = 0f, cel = 0f;
+		
+		Scanner scan =new Scanner(System.in);
+		
+		System.out.println("Introduzca los grados Fahrenheit: ");
+		
+		far=scan.nextFloat();
+		
+		cel = (5.0f/9.0f)*(far-32);
+		
+		System.out.println("El valor en grados Celsius es: " + cel);
+		scan.close();
+
+	}
+}
 
 //2.
 

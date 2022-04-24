@@ -17,11 +17,11 @@ public class main {
 		while (opcion != 'g') {
 			System.out.println("\nBienvenido/a al programa de la agencia inmobiliaria " + total.getNombre() +". \nA continuación "
 					+ "se presentan las diferentes opciones que la aplicación permite ejecutar:\n" 
-					+ "\n A) Añade un piso a la venta o alquiler a la lista del archivo.\n"
+					+ "\n A) Añade un inmueble a la venta o alquiler a la lista del archivo.\n"
 					+ " B) Modificar un piso existente en la lista del archivo.\n"
-					+ " C) Listar los pisos disponibles.\n" + " D) Listar los pisos de un rango de precios.\n"
-					+ " E) Listar los pisos de un rango de metros.\n"
-					+ " F) Eliminar un piso de la lista tras este ser alquilado o vendido.\n"
+					+ " C) Listar los inmuebles disponibles.\n" + " D) Listar los inmuebles de un rango de precios.\n"
+					+ " E) Listar los inmuebles de un rango de metros.\n"
+					+ " F) Eliminar un inmuebles de la lista tras este ser alquilado o vendido.\n"
 					+ " G) Finalizar la aplicación.\n");
 
 			opcion = scan.next().toLowerCase().charAt(0);
@@ -33,10 +33,10 @@ public class main {
 				break;
 
 			case 'b':
-				total.modificarPiso();
+				total.modificarInmueble();
 				break;
 			case 'c':
-				total.mostrarPisos();
+				total.mostrarInmuebles();
 				break;
 
 			case 'd':
@@ -57,6 +57,7 @@ public class main {
 					int b = a;
 					while (a < 0) {
 						System.out.println("El precio debe ser positivo.\nIntroduzca de nuevo el precio menor: ");
+						scan.nextLine();
 						a = Integer.parseInt(scan.nextLine());
 					}
 					while (b <= a) {
@@ -73,6 +74,7 @@ public class main {
 				} else if(x == 'b') {
 					System.out.println(
 							"\nSe procede a mostrar los pisos por su rango de precios de alquiler.\nIntroduzca el precio menor: ");
+					scan.nextLine();
 					int a = Integer.parseInt(scan.nextLine());
 					int b = a;
 					while (a < 0) {
@@ -84,6 +86,7 @@ public class main {
 						b = Integer.parseInt(scan.nextLine());
 						while (b < 0) {
 							System.out.println("El precio debe ser positivo.\nIntroduzca de nuevo el precio mayor: ");
+							scan.nextLine();
 							b = Integer.parseInt(scan.nextLine());
 						}
 					}
@@ -96,6 +99,7 @@ public class main {
 
 			case 'e':
 				System.out.println("A continuación se ordenará la lista de pisos por el rango de metros: \nIntroduzca la cantidad menor de m2: ");
+				scan.nextLine();
 				int a = Integer.parseInt(scan.nextLine());
 				int b = a;
 				while (a < 0) {
@@ -115,7 +119,7 @@ public class main {
 				break;
 				
 			case 'f':
-				total.removePiso();
+				total.removeInmueble();
 				break;
 			case 'g':
 				System.out.println("\nEl programa ha finalizado.");

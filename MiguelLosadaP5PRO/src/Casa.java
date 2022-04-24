@@ -49,10 +49,9 @@ public class Casa extends Inmueble{
 			toRet += "\n\tPosee piscina.";
 		} if (jardin) {
 			toRet += "\n\tPosee jardín.";
-		}
+		} 
 		
 		return toRet;
 	}
-	
 	
 }

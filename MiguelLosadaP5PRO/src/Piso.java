@@ -4,7 +4,7 @@ public class Piso extends Inmueble{
 
     //Atributos subclase Piso:
 
-	private int numPîso;
+	private int numPiso;
 	private char puerta;
 	private boolean estudio;
 	
@@ -13,7 +13,7 @@ public class Piso extends Inmueble{
 	public Piso(Direccion direccion, int id, int numHab, double m2, double precioVenta, double precioAlquiler,
 			ArrayList<Estado> estado, boolean garaje, int numPiso, char puerta, boolean estudio) {
 		super(direccion, id, numHab, m2, precioVenta, precioAlquiler, estado, garaje);
-		this.numPîso = numPiso;
+		this.numPiso = numPiso;
 		this.puerta = puerta;
 		if(numHab==1) {
 			this.estudio = true;
@@ -31,12 +31,12 @@ public class Piso extends Inmueble{
 
 	//Getters y Setters subclase Piso:
 
-	public int getNumPîso() {
-		return numPîso;
+	public int getNumPiso() {
+		return numPiso;
 	}
 
-	public void setNumPîso(int numPîso) {
-		this.numPîso = numPîso;
+	public void setNumPiso(int numPiso) {
+		this.numPiso = numPiso;
 	}
 
 	public char getPuerta() {
@@ -59,11 +59,11 @@ public class Piso extends Inmueble{
 	
 	@Override
 	public String toString() {
-		String toRet = "\nEl Piso " +super.toString() + "\n\tNúmero del piso: " + numPîso + ".\n\tPuerta: " + puerta +".";
+		String toRet = "\nEl Piso " +super.toString() + "\n\tNúmero del piso: " + numPiso + ".\n\tPuerta: " + puerta +".";
 		
-		if(estudio) {
+		if(getNumHab()==1) {
 			toRet += "\n\tEs un estudio.";
-		}
+		} 
 		
 		return toRet;
 	}

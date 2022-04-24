@@ -44,7 +44,7 @@ public class Agencia {
 		this.nombre = nombre;
 	}
 
-	public void setPisos(ArrayList<Inmueble> inmueble) {
+	public void setInmuebles(ArrayList<Inmueble> inmueble) {
 		this.inmueble = inmueble;
 	}
 
@@ -68,14 +68,14 @@ public class Agencia {
 				Venta, false, true, true));
 		pisuco.add(new Casa(new Direccion(TipoDeVia.CAMINO, "Alexandre Bóveda", 1, 36203), 5, 4, 132.12, 4143245,
 				312.10, AlquilerYVenta, true, false, false));
-		pisuco.add(new Piso(new Direccion(TipoDeVia.PASEO, "Rey", 12, 36202), 6, 1, 103, 1654732, 400.20, Alquiler,
-				false, 2, 'A', false));
+		pisuco.add(new Piso(new Direccion(TipoDeVia.PASEO, "Rey", 12, 36202), 6, 1, 103, 0.0, 400.20, Alquiler, false,
+				2, 'A', false));
 		pisuco.add(new Piso(new Direccion(TipoDeVia.CALLE, "Alcalde Gregorio Espino", 11, 36202), 7, 6, 128, 301200.70,
 				0.0, Venta, false, 4, 'C', true));
 		pisuco.add(new Piso(new Direccion(TipoDeVia.CARRETERA, "Luis Taboada", 15, 36201), 8, 4, 97, 240000.20, 356.12,
 				AlquilerYVenta, false, 3, 'B', false));
-		pisuco.add(new Piso(new Direccion(TipoDeVia.PASEO, "La Princesa", 7, 36202), 9, 3, 66, 0.0, 389.10,
-				Alquiler, true, 2, 'B', true));
+		pisuco.add(new Piso(new Direccion(TipoDeVia.PASEO, "La Princesa", 7, 36202), 9, 3, 66, 0.0, 389.10, Alquiler,
+				true, 2, 'B', true));
 		pisuco.add(new Piso(new Direccion(TipoDeVia.AVENIDA, "Areal", 18, 36201), 10, 5, 44, 157800.90, 0.0, Venta,
 				false, 5, 'C', false));
 
@@ -130,10 +130,10 @@ public class Agencia {
 
 			// Número de habitaciones del PISO
 
-			System.out.println("Introduzca el numero de Habitaciones del piso: ");
+			System.out.println("Introduzca el número de habitaciones del piso: ");
 			int numHab = Integer.parseInt(scan.nextLine());
-			while (numHab < 0) {
-				System.out.println("El numero de habitaciones del piso debe ser positivo: ");
+			while (numHab < 1) {
+				System.out.println("El piso debe tener al menos una habitación: ");
 				numHab = Integer.parseInt(scan.nextLine());
 			}
 
@@ -152,7 +152,7 @@ public class Agencia {
 				System.out.println("El número del piso debe ser positivo: ");
 				numPiso = Integer.parseInt(scan.nextLine());
 			}
-			piso.setNumPîso(numPiso);
+			piso.setNumPiso(numPiso);
 
 			// Puerta del piso
 
@@ -182,8 +182,8 @@ public class Agencia {
 			scan.nextLine();
 			int m2 = Integer.parseInt(scan.nextLine());
 
-			while (m2 < 0) {
-				System.out.println("La cantidad de m2 debe ser positiva: ");
+			while (m2 < 20) {
+				System.out.println("La cantidad de m2 debe mayor a 20: ");
 				m2 = Integer.parseInt(scan.nextLine());
 			}
 
@@ -193,9 +193,9 @@ public class Agencia {
 				System.out.println("Introduzca el precio de alquiler del piso: ");
 				double alquiler = Double.parseDouble(scan.nextLine());
 				piso.setPrecioAlquiler(alquiler);
-				while (alquiler < 0) {
+				while (alquiler < 150) {
 					System.out.println(
-							"El precio del alquiler debe ser tener un valor positivo. Introduzca nuevamente el precio del alquiler del piso: ");
+							"El precio del alquiler debe ser mayor a 150 €. Introduzca nuevamente el precio del alquiler del piso: ");
 					alquiler = Double.parseDouble(scan.nextLine());
 					piso.setPrecioAlquiler(alquiler);
 				}
@@ -203,9 +203,9 @@ public class Agencia {
 				System.out.println("Introduzca el precio de venta del piso: ");
 				double venta = Double.parseDouble(scan.nextLine());
 				piso.setPrecioVenta(venta);
-				while (venta < 0) {
+				while (venta < 100000) {
 					System.out.println(
-							"El precio de venta del piso debe ser tener un valor positivo. Introduzca nuevamente el precio de venta del piso: ");
+							"El precio de venta del piso debe ser mayor a 100.000 €. Introduzca nuevamente el precio de venta del piso: ");
 					venta = Double.parseDouble(scan.nextLine());
 					piso.setPrecioVenta(venta);
 				}
@@ -213,26 +213,25 @@ public class Agencia {
 				System.out.println("Introduzca el precio de alquiler del piso: ");
 				double alquiler = Double.parseDouble(scan.nextLine());
 				piso.setPrecioAlquiler(alquiler);
-				while (alquiler < 0) {
+				while (alquiler < 150) {
 					System.out.println(
-							"El precio del alquiler debe ser tener un valor positivo. Introduzca nuevamente el precio del alquiler del piso: ");
+							"El precio del alquiler debe ser mayor a 150 €. Introduzca nuevamente el precio del alquiler del piso: ");
 					alquiler = Double.parseDouble(scan.nextLine());
 					piso.setPrecioAlquiler(alquiler);
 				}
 				System.out.println("Introduzca el precio de venta del piso: ");
 				double venta = Double.parseDouble(scan.nextLine());
 				piso.setPrecioVenta(venta);
-				while (venta < 0) {
+				while (venta < 100000) {
 					System.out.println(
-							"El precio de venta del piso debe ser tener un valor positivo. Introduzca nuevamente el precio de venta del piso: ");
+							"El precio de venta del piso debe ser tener un valor mayor a 100.000€. Introduzca nuevamente el precio de venta del piso: ");
 					venta = Double.parseDouble(scan.nextLine());
 					piso.setPrecioVenta(venta);
 				}
 
 			}
-			
-			piso.setId(inmueble.size() + 1);
 
+			piso.setId(inmueble.size() + 1);
 			System.out.println(piso);
 			this.inmueble.add(piso);
 
@@ -240,7 +239,7 @@ public class Agencia {
 
 		else if (z.equals("casa")) {
 			System.out.println(
-					"\nA continuación se va a añadir un nuevo piso al archivo.\n\nSe pedirán los datos de la DIRECCIÓN del piso.");
+					"\nA continuación se va a añadir una nueva casa al archivo.\n\nSe pedirán los datos de la DIRECCIÓN de la casa.");
 
 			pedirDireccion(casa);
 
@@ -267,10 +266,10 @@ public class Agencia {
 
 			// Número de habitaciones de la casa
 
-			System.out.println("Introduzca el numero de Habitaciones del piso: ");
+			System.out.println("Introduzca el numero de habitaciones de la casa: ");
 			int numHab = Integer.parseInt(scan.nextLine());
 			while (numHab < 0) {
-				System.out.println("El numero de Habitaciones del piso debe ser positivo: ");
+				System.out.println("El numero de habitaciones debe ser mayor que 1: ");
 				numHab = Integer.parseInt(scan.nextLine());
 			}
 
@@ -278,7 +277,7 @@ public class Agencia {
 
 			// Piscina
 
-			System.out.println("Introduzca 'si' o 'no' si la casa posee jardín: ");
+			System.out.println("Introduzca 'si' o 'no' si la casa posee piscina: ");
 			String piscina = scan.next().toLowerCase();
 
 			while (!piscina.equals("si") && !piscina.equals("no")) {
@@ -288,7 +287,7 @@ public class Agencia {
 
 			if (piscina.equals("si")) {
 				casa.setPiscina(true);
-			} else if (piscina.equals("no")) {
+			} else {
 				casa.setPiscina(false);
 			}
 
@@ -296,82 +295,83 @@ public class Agencia {
 
 			System.out.println("Introduzca 'si' o 'no' si la casa posee jardín: ");
 			String jardin = scan.next().toLowerCase();
-
-			while (jardin != "si" && jardin != "no") {
+			while (!jardin.equals("si") && !jardin.equals("no")) {
 				System.out.println("Las opciones son 'si' o 'no': ");
 				jardin = scan.next().toLowerCase();
 			}
 
-			if (jardin == "si") {
+			if (jardin.equals("si")) {
 				casa.setJardin(true);
-			} else if (jardin == "no") {
+			} else {
 				casa.setJardin(false);
 			}
 
 			// Garaje
 
-			System.out.println("Introduzca 'si' o 'no' si el piso tiene garaje propio: ");
+			System.out.println("Introduzca 'si' o 'no' si la casa tiene garaje propio: ");
+			scan.nextLine();
 			String garaje = scan.next().toLowerCase();
 
-			while (garaje != "si" && garaje != "no") {
+			while (!garaje.equals("si") && !garaje.equals("no")) {
 				System.out.println("Las opciones son 'si' o 'no': ");
 				garaje = scan.next().toLowerCase();
 			}
 
-			if (garaje == "si") {
+			if (garaje.equals("si")) {
 				casa.setGaraje(true);
-			} else if (garaje == "no") {
+			} else {
 				casa.setGaraje(false);
 			}
 
 			// Número de m2 de la casa
 
-			System.out.println("Introduzca los metros cuadrados: ");
+			System.out.println("Introduzca los metros cuadrados de la casa: ");
+			scan.nextLine();
 			int m2 = Integer.parseInt(scan.nextLine());
 
-			while (m2 < 0) {
-				System.out.println("La cantidad de m2 debe ser positiva: ");
+			while (m2 <= 20) {
+				System.out.println("La cantidad de m2 debe ser superior a 20 m2: ");
 				m2 = Integer.parseInt(scan.nextLine());
 			}
 
 			casa.setM2(m2);
 
 			if (x == 1) {
-				System.out.println("Introduzca el precio de alquiler del piso: ");
+				System.out.println("Introduzca el precio de alquiler de la casa: ");
 				double alquiler = Double.parseDouble(scan.nextLine());
 				casa.setPrecioAlquiler(alquiler);
-				while (alquiler < 0) {
+				while (alquiler <= 150) {
 					System.out.println(
-							"El precio del alquiler debe ser tener un valor positivo. Introduzca nuevamente el precio del alquiler del piso: ");
+							"El precio del alquiler debe ser como mínimo 150 €. Introduzca nuevamente el precio del alquiler de la casa: ");
 					alquiler = Double.parseDouble(scan.nextLine());
 					casa.setPrecioAlquiler(alquiler);
 				}
 			} else if (x == 2) {
-				System.out.println("Introduzca el precio de venta del piso: ");
+				System.out.println("Introduzca el precio de venta de la casa: ");
 				double venta = Double.parseDouble(scan.nextLine());
 				casa.setPrecioVenta(venta);
-				while (venta < 0) {
+				while (venta < 100000) {
 					System.out.println(
-							"El precio de venta del piso debe ser tener un valor positivo. Introduzca nuevamente el precio de venta del piso: ");
+							"El precio de venta de la casa debe ser mínimo de 100.000 €. Introduzca nuevamente el precio de venta de la casa: ");
 					venta = Double.parseDouble(scan.nextLine());
 					casa.setPrecioVenta(venta);
 				}
 			} else if (x == 3) {
-				System.out.println("Introduzca el precio de alquiler del piso: ");
+				System.out.println("Introduzca el precio de alquiler de la casa: ");
 				double alquiler = Double.parseDouble(scan.nextLine());
 				casa.setPrecioAlquiler(alquiler);
-				while (alquiler < 0) {
+				while (alquiler < 150) {
 					System.out.println(
-							"El precio del alquiler debe ser tener un valor positivo. Introduzca nuevamente el precio del alquiler del piso: ");
+							"El precio del alquiler debe ser mínimo de 150 €. Introduzca nuevamente el precio del alquiler de la casa: ");
 					alquiler = Double.parseDouble(scan.nextLine());
 					casa.setPrecioAlquiler(alquiler);
 				}
-				System.out.println("Introduzca el precio de venta del piso: ");
+				System.out.println("Introduzca el precio de venta de la casa: ");
 				double venta = Double.parseDouble(scan.nextLine());
 				casa.setPrecioVenta(venta);
-				while (venta < 0) {
+				while (venta < 100000) {
 					System.out.println(
-							"El precio de venta del piso debe ser tener un valor positivo. Introduzca nuevamente el precio de venta del piso: ");
+							"El precio de venta de la casa debe ser mayor a 100.000 €. Introduzca nuevamente el precio de venta de la casa: ");
 					venta = Double.parseDouble(scan.nextLine());
 					casa.setPrecioVenta(venta);
 				}
@@ -379,9 +379,9 @@ public class Agencia {
 			}
 
 			casa.setId(inmueble.size() + 1);
-			
 			this.inmueble.add(casa);
-		
+			System.out.println(casa);
+
 		}
 
 	}
@@ -396,7 +396,8 @@ public class Agencia {
 
 		while (incorrecto) {
 
-			System.out.println("Introduzca el tipo de vía en la que se encuentra el inmueble (AVENIDA, CALLE, CAMINO, CARRETERA, PASEO, PLAZA): ");
+			System.out.println(
+					"Introduzca el tipo de vía en la que se encuentra el inmueble (AVENIDA, CALLE, CAMINO, CARRETERA, PASEO, PLAZA): ");
 			String tipoVia = scan.next().toLowerCase();
 
 			switch (tipoVia) {
@@ -432,7 +433,7 @@ public class Agencia {
 				break;
 
 			default:
-				System.out.println("Opción errónea.");
+				System.out.println("OPCIÓN ERRÓNEA.\n");
 			}
 		}
 
@@ -455,9 +456,9 @@ public class Agencia {
 		while (cp < 10000 || cp > 99999) {
 			System.out
 					.println("El CP debe ser un numero de entre 10000 y 99999. Introduzca de nuevo el código postal: ");
-			cp = Integer.parseInt(scan.nextLine());	
+			cp = Integer.parseInt(scan.nextLine());
 		}
-		
+
 		aux.setCp(cp);
 
 		inmueble.setDireccion(aux);
@@ -466,98 +467,282 @@ public class Agencia {
 
 	// (Apartado B). Método para modificar un piso:
 
-	public void modificarPiso() {
+	public void modificarInmueble() {
 
 		int id;
 
-		System.out.println("\nIntroduzca el ID del piso a modificar: ");
+		System.out.println("\nIntroduzca el ID del inmueble a modificar: ");
 
 		id = Integer.parseInt(scan.nextLine());
 
-		while (id > this.inmueble.size() || id < 0) {
+		while (id > this.inmueble.size() || id <= 0) {
 			System.out.println("El ID introducido no pertenece a ningún piso, inténtelo de nuevo: ");
 			id = Integer.parseInt(scan.nextLine());
 		}
 
 		System.out.println(inmueble.get(id - 1).toString());
 
-		char opcion = 'z';
+		if (inmueble.get(id - 1) instanceof Piso) {
+			char opcion = 'z';
 
-		while (opcion != 'f') {
-			System.out.println("\nLas opciones a modificar son las siguientes:\n"
-					+ " A) Introduzca una 'A' si desea modificar la dirección.\n"
-					+ " B) Introduzca una 'B' si desea modificar el precio de Venta del piso.\n"
-					+ " C) Introduzca una 'C' si desea modificar el precio de Alquiler del piso.\n"
-					+ " D) Introduzca una 'D' si desea modificar los metros cuadrados.\n"
-					+ " E) Introduzca una 'E' si desea cambiar el estado del piso.\n"
-					+ " F) Introduzca una 'F' si no desea modificar ningún atributo.\n");
+			while (opcion != 'j') {
+				System.out.println("\nLas opciones a modificar de un PISO son las siguientes:\n"
+						+ " A) Introduzca una 'A' si desea modificar la dirección del piso.\n"
+						+ " B) Introduzca una 'B' si desea modificar el precio de Venta del piso.\n"
+						+ " C) Introduzca una 'C' si desea modificar el precio de Alquiler del piso.\n"
+						+ " D) Introduzca una 'D' si desea modificar los metros cuadrados.\n"
+						+ " E) Introduzca una 'E' si desea cambiar el estado del piso.\n"
+						+ " F) Introduzca una 'F' si desea modificar el número del piso.\n"
+						+ " G) Introduzca una 'G' si desea modificar la letra de la puerta del piso.\n"
+						+ " H) Introduzca una 'H' si desea modificar el número de habitaciones del piso.\n"
+						+ " I) Introduzca una 'I' si desea modificar el atributo garaje del piso.\n"
+						+ " J) Introduzca una 'J' si no desea modificar ningún atributo.\n");
 
-			opcion = scan.nextLine().toLowerCase().charAt(0);
+				opcion = scan.nextLine().toLowerCase().charAt(0);
 
-			switch (opcion) {
+				Piso aux = (Piso) inmueble.get(id - 1);
 
-			case 'a':
-				System.out.println("\nA continuación se introducirá la nueva dirección. ");
-				pedirDireccion(inmueble.get(id - 1));
-				break;
-			case 'b':
-				System.out.println("\nIntroduzca el nuevo precio de venta del piso: ");
-				double precioVenta = Double.parseDouble(scan.nextLine());
-				while (precioVenta < 0.0) {
-					System.out.println("\nEl nuevo precio de venta del piso debe ser positivo: ");
-					precioVenta = Double.parseDouble(scan.nextLine());
-				}
-				inmueble.get(id - 1).setPrecioVenta(precioVenta);
-				break;
-			case 'c':
-				System.out.println("\nIntroduzca el nuevo precio de alquiler del piso: ");
-				double precioAlquiler = Double.parseDouble(scan.nextLine());
-				while (precioAlquiler < 0.0) {
-					System.out.println("\nEl nuevo precio de alquiler del piso debe ser positivo: ");
-					precioAlquiler = Double.parseDouble(scan.nextLine());
-				}
-				inmueble.get(id - 1).setPrecioAlquiler(precioAlquiler);
-				break;
-			case 'd':
-				System.out.println("\nIntroduzca los metros cuadrados: ");
-				int m2 = Integer.parseInt(scan.nextLine());
-				while (m2 < 0) {
-					System.out.println("\nLos metros cuadrados deben ser una cantidad positiva: ");
-					m2 = Integer.parseInt(scan.nextLine());
-				}
-				inmueble.get(id - 1).setM2(m2);
-				break;
-			case 'e':
-				System.out.println("\nIntroduzca el nuevo estado del Piso.\n\"Introduzca "
-						+ "un 1 si el piso está en alquiler, 2 si está a la venta o 3 si está en ambos estados: ");
-				int x = Integer.parseInt(scan.nextLine());
-				while (x < 1 || x > 3) {
+				switch (opcion) {
+
+				case 'a':
+					System.out.println("\nA continuación se introducirá la nueva dirección. ");
+					pedirDireccion(inmueble.get(id - 1));
+					break;
+				case 'b':
+					System.out.println("\nIntroduzca el nuevo precio de venta del piso: ");
+					double precioVenta = Double.parseDouble(scan.nextLine());
+					while (precioVenta < 100000) {
+						System.out.println("\nEl nuevo precio de venta del piso debe ser mayor a 100.000 €: ");
+						precioVenta = Double.parseDouble(scan.nextLine());
+					}
+					inmueble.get(id - 1).setPrecioVenta(precioVenta);
+					break;
+				case 'c':
+					System.out.println("\nIntroduzca el nuevo precio de alquiler del piso: ");
+					double precioAlquiler = Double.parseDouble(scan.nextLine());
+					while (precioAlquiler < 150) {
+						System.out.println("\nEl nuevo precio de alquiler del piso debe ser mayor a 150 €: ");
+						precioAlquiler = Double.parseDouble(scan.nextLine());
+					}
+					inmueble.get(id - 1).setPrecioAlquiler(precioAlquiler);
+					break;
+				case 'd':
+					System.out.println("\nIntroduzca los metros cuadrados: ");
+					int m2 = Integer.parseInt(scan.nextLine());
+					while (m2 < 25) {
+						System.out.println("\nLos metros cuadrados deben ser mas de 25: ");
+						m2 = Integer.parseInt(scan.nextLine());
+					}
+					inmueble.get(id - 1).setM2(m2);
+					break;
+				case 'e':
 					System.out.println(
-							"\nTiene que ser un valor entre 1 y 3.\nIntroduzca un 1 si el piso está en alquiler, "
-									+ "2 si está a la venta o 3 si está en ambos estados: ");
-					x = Integer.parseInt(scan.nextLine());
+							"\nIntroduzca el nuevo estado del Piso.\nIntroduzca un 1 si el piso está en alquiler, 2 si está a la venta o 3 si está en ambos estados: ");
+					int x = Integer.parseInt(scan.nextLine());
+					while (x < 1 || x > 3) {
+						System.out.println(
+								"\nTiene que ser un valor entre 1 y 3.\nIntroduzca un 1 si el piso está en alquiler, "
+										+ "2 si está a la venta o 3 si está en ambos estados: ");
+						x = Integer.parseInt(scan.nextLine());
+					}
+					if (x == 1) {
+						inmueble.get(id - 1).setEstado(Alquiler);
+					} else if (x == 2) {
+						inmueble.get(id - 1).setEstado(Venta);
+					} else if (x == 3) {
+						inmueble.get(id - 1).setEstado(AlquilerYVenta);
+					}
+					break;
+				case 'f':
+					System.out.println("Introduzca el nuevo número del piso: ");
+					int num = Integer.parseInt(scan.nextLine());
+					while (num < 0) {
+						System.out.println(
+								"El número del piso tiene que ser positivo. Introduzca de nuevo el número del piso: ");
+						num = Integer.parseInt(scan.nextLine());
+					}
+					aux.setNumPiso(num);
+					break;
+				case 'g':
+					System.out.println("Introduzca la nueva letra del piso: ");
+					char letra = scan.next().charAt(0);
+					aux.setPuerta(letra);
+					break;
+				case 'h':
+					System.out.println("Introduzca el nuevo número de habitaciones del piso: ");
+					int hab = Integer.parseInt(scan.nextLine());
+					while (hab < 0) {
+						System.out.println(
+								"El número de habitaciones tiene que ser positivo. Introduzca de nuevo de habitaciones del piso: ");
+						hab = Integer.parseInt(scan.nextLine());
+					}
+					inmueble.get(id - 1).setNumHab(hab);
+					break;
+				case 'i':
+					System.out.println("Introduzca un 'si' o un 'no' si el piso posee garaje o no: ");
+					String garaje = scan.nextLine();
+
+					while (!garaje.equals("si") && !garaje.equals("no")) {
+						System.out.println("Debe introducir un 'si' o 'no' si el piso posee o no garaje: ");
+						garaje = scan.next();
+					}
+
+					if (garaje.equals("si")) {
+						inmueble.get(id - 1).setGaraje(true);
+					} else {
+						inmueble.get(id - 1).setGaraje(false);
+					}
+					break;
+
+				case 'j':
+					System.out.println("\nNo se desea modificar ningún atributo más.");
+					break;
+				default:
+					System.out.println("\nSeleccione una de las opciones posibles.");
 				}
-				if (x == 1) {
-					inmueble.get(id - 1).setEstado(Alquiler);
-				} else if (x == 2) {
-					inmueble.get(id - 1).setEstado(Venta);
-				} else if (x == 3) {
-					inmueble.get(id - 1).setEstado(AlquilerYVenta);
-				}
-				break;
-			case 'f':
-				System.out.println("\nNo se desea modificar ningún atributo más.");
-				break;
-			default:
-				System.out.println("\nSeleccione una de las opciones posibles.");
+				System.out.println(inmueble.get(id - 1).toString());
 			}
-			System.out.println(inmueble.get(id - 1).toString());
+		} else {
+			char opcion = 'z';
+
+			while (opcion != 'j') {
+				System.out.println("\nLas opciones a modificar de una CASA son las siguientes:\n"
+						+ " A) Introduzca una 'A' si desea modificar la dirección de la casa.\n"
+						+ " B) Introduzca una 'B' si desea modificar el precio de Venta de la casa.\n"
+						+ " C) Introduzca una 'C' si desea modificar el precio de Alquiler de la casa.\n"
+						+ " D) Introduzca una 'D' si desea modificar los metros cuadrados.\n"
+						+ " E) Introduzca una 'E' si desea cambiar el estado de la casa.\n"
+						+ " F) Introduzca una 'F' si desea modificar el atributo piscina de la casa.\n"
+						+ " G) Introduzca una 'G' si desea modificar el atributo jardín de la casa.\n"
+						+ " H) Introduzca una 'H' si desea modificar el número de habitaciones de la casa.\n"
+						+ " I) Introduzca una 'I' si desea modificar el atributo garaje de la casa.\n"
+						+ " J) Introduzca una 'J' si no desea modificar ningún atributo.\n");
+
+				opcion = scan.nextLine().toLowerCase().charAt(0);
+
+				Casa aux = (Casa) inmueble.get(id - 1);
+
+				switch (opcion) {
+
+				case 'a':
+					System.out.println("\nA continuación se introducirá la nueva dirección. ");
+					pedirDireccion(inmueble.get(id - 1));
+					break;
+				case 'b':
+					System.out.println("\nIntroduzca el nuevo precio de venta de la casa: ");
+					double precioVenta = Double.parseDouble(scan.nextLine());
+					while (precioVenta < 100000) {
+						System.out.println("\nEl nuevo precio de venta de la casa debe ser mayor a 100.000 €: ");
+						precioVenta = Double.parseDouble(scan.nextLine());
+					}
+					inmueble.get(id - 1).setPrecioVenta(precioVenta);
+					break;
+				case 'c':
+					System.out.println("\nIntroduzca el nuevo precio de alquiler de la casa: ");
+					double precioAlquiler = Double.parseDouble(scan.nextLine());
+					while (precioAlquiler < 150) {
+						System.out.println("\nEl nuevo precio de alquiler de la casa debe ser mayor a 150 €: ");
+						precioAlquiler = Double.parseDouble(scan.nextLine());
+					}
+					inmueble.get(id - 1).setPrecioAlquiler(precioAlquiler);
+					break;
+				case 'd':
+					System.out.println("\nIntroduzca los metros cuadrados: ");
+					int m2 = Integer.parseInt(scan.nextLine());
+					while (m2 < 20) {
+						System.out.println("\nLos metros cuadrados deben ser mas de 20: ");
+						m2 = Integer.parseInt(scan.nextLine());
+					}
+					inmueble.get(id - 1).setM2(m2);
+					break;
+				case 'e':
+					System.out.println(
+							"\nIntroduzca el nuevo estado de la casa.\nIntroduzca un 1 si la casa está en alquiler, 2 si está a la venta o 3 si está en ambos estados: ");
+					int x = Integer.parseInt(scan.nextLine());
+					while (x < 1 || x > 3) {
+						System.out.println(
+								"\nTiene que ser un valor entre 1 y 3.\nIntroduzca un 1 si la casa está en alquiler, "
+										+ "2 si está a la venta o 3 si está en ambos estados: ");
+						x = Integer.parseInt(scan.nextLine());
+					}
+					if (x == 1) {
+						inmueble.get(id - 1).setEstado(Alquiler);
+					} else if (x == 2) {
+						inmueble.get(id - 1).setEstado(Venta);
+					} else if (x == 3) {
+						inmueble.get(id - 1).setEstado(AlquilerYVenta);
+					}
+					break;
+				case 'f':
+					System.out.println("Introduzca un 'si' o un 'no' si la casa posee piscina o no: ");
+					String piscina = scan.nextLine();
+					
+					while (!piscina.equals("si") && !piscina.equals("no")) {
+						System.out.println("Debe introducir un 'si' o 'no' si la casa posee o no piscina: ");
+						piscina = scan.next();
+					}
+
+					if (piscina.equals("si")) {
+						aux.setPiscina(true);
+					} else {
+						aux.setPiscina(false);
+					}
+					break;
+				case 'g':
+					System.out.println("Introduzca un 'si' o un 'no' si la casa posee jardin o no: ");
+					String jardin = scan.nextLine();
+					
+					while (!jardin.equals("si") && !jardin.equals("no")) {
+						System.out.println("Debe introducir un 'si' o 'no' si la casa posee o no jardin: ");
+						jardin = scan.next();
+					}
+
+					if (jardin.equals("si")) {
+						aux.setJardin(true);
+					} else {
+						aux.setJardin(false);
+					}
+					break;
+				case 'h':
+					System.out.println("Introduzca el nuevo número de habitaciones de la casa: ");
+					int hab = Integer.parseInt(scan.nextLine());
+					while (hab < 0) {
+						System.out.println(
+								"El número de habitaciones tiene que ser positivo. Introduzca de nuevo de habitaciones de la casa: ");
+						hab = Integer.parseInt(scan.nextLine());
+					}
+					inmueble.get(id - 1).setNumHab(hab);
+					break;
+				case 'i':
+					System.out.println("Introduzca un 'si' o un 'no' si la casa posee garaje o no: ");
+					String garaje = scan.nextLine();
+
+					while (!garaje.equals("si") && !garaje.equals("no")) {
+						System.out.println("Debe introducir un 'si' o 'no' si la casa posee o no garaje: ");
+						garaje = scan.next();
+					}
+
+					if (garaje.equals("si")) {
+						inmueble.get(id - 1).setGaraje(true);
+					} else {
+						inmueble.get(id - 1).setGaraje(false);
+					}
+					break;
+
+				case 'j':
+					System.out.println("\nNo se desea modificar ningún atributo más.");
+					break;
+				default:
+					System.out.println("\nSeleccione una de las opciones posibles.");
+				}
+				System.out.println(inmueble.get(id - 1).toString());
+			}
 		}
 	}
 
 	// (Apartado C). Método para mostrar por pantalla los pisos:
 
-	public void mostrarPisos() {
+	public void mostrarInmuebles() {
 		System.out.println("\nLos inmuebles en la base de datos de la agencia actualmente son los siguientes: ");
 
 		for (int i = 0; i < this.inmueble.size(); i++) {
@@ -569,8 +754,8 @@ public class Agencia {
 
 	public void rangoPreciosVenta(int precioMayor, int precioMenor) {
 		int x = 0;
-		if(precioMenor==0) {
-			precioMenor=1;
+		if (precioMenor == 0) {
+			precioMenor = 1;
 		}
 		for (int i = 0; i < inmueble.size(); i++) {
 			double precio = inmueble.get(i).getPrecioVenta();
@@ -586,8 +771,8 @@ public class Agencia {
 
 	public void rangoPreciosAlquiler(int precioMayor, int precioMenor) {
 		int x = 0;
-		if(precioMenor==0) {
-			precioMenor=1;
+		if (precioMenor == 0) {
+			precioMenor = 1;
 		}
 		for (int i = 0; i < inmueble.size(); i++) {
 			double precio = inmueble.get(i).getPrecioAlquiler();
@@ -619,14 +804,14 @@ public class Agencia {
 
 	// (Apartado F). Método para eliminar un piso del programa:
 
-	public void removePiso() {
+	public void removeInmueble() {
 
 		int id;
-		mostrarPisos();
+		mostrarInmuebles();
 		System.out.println("\nIntroduzca el ID del inmueble a eliminar: ");
 		id = Integer.parseInt(scan.nextLine());
 
-		while (id > this.inmueble.size() || id < 0) {
+		while (id > this.inmueble.size() || id <= 0) {
 			System.out.println("El ID introducido no pertenece a ningún inmueble, inténtelo de nuevo: ");
 			id = Integer.parseInt(scan.nextLine());
 		}

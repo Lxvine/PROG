@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Inmueble {
+public class Inmueble implements Taxeable{
 
 	// Atributos superclase Inmueble:
 
@@ -24,7 +24,7 @@ public class Inmueble {
 		this.garaje = garaje;
 	}
 
-	// Constructor vacío superclase Inmueble:
+	// Constructor por defecto superclase Inmueble:
 
 	public Inmueble() {
 		this.direccion = direccion;
@@ -107,22 +107,37 @@ public class Inmueble {
 	@Override
 	public String toString() {
 
-        String toRet = "con ID " + id + ":\n\tDireccion: " + direccion + "\n\tNumero de habitaciones: " + numHab  + ".\n\tTamanho en m2: "
-                + m2 + ".\n\tEstado: " + estado ;
+        String toRet = "con ID " + id + ":\n\tDireccion: " + direccion + "\n\tNumero de habitaciones: " + numHab  + ".\n\tTamaño en m2: "
+                + m2 + " m2.\n\tEstado: " + estado ;
 
         if (precioVenta > 0.0) {
-            toRet += ".\n\tPrecio de venta: " + precioVenta + " €";
-        }
-        if (precioAlquiler > 0.0) {
-            toRet += ".\n\tPrecio de alquiler: " + precioAlquiler + " €";
-        }
+            toRet += "\n\tPrecio de venta: " + precioVenta + " €.";
+        } if (precioVenta != 0) {
+			toRet += "\n\tEl precio de la venta con impuestos es: " + sumImpuestosVenta() + " €.";
+		} if (precioAlquiler > 0.0) {
+            toRet += "\n\tPrecio de alquiler: " + precioAlquiler + " €.";
+		} if (precioAlquiler !=0) {
+			toRet += "\n\tEl precio del alquiler con impuestos es: " + sumImpuestosAlquiler() + " €.";
+		}
 
         if (garaje) {
-            toRet += ".\n\tPosee Garaje.";
+            toRet += ".\n\tPosee garaje.";
         }
 
         return toRet;
 
     }
+	
+	public double sumImpuestosVenta() {
+		double preciofinal = getPrecioVenta()+(getPrecioVenta()*ITP/100)+(getPrecioVenta()*IVA/100);
+		Math.round(preciofinal);
+		return Math.round(preciofinal);
+	}
+	
+	public double sumImpuestosAlquiler() {
+		double preciofinal = getPrecioAlquiler()+(getPrecioAlquiler()*ITP/100)+(getPrecioAlquiler()*IVA/100);
+		return Math.round(preciofinal);
+	}
+	
 
 }
