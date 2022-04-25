@@ -106,40 +106,36 @@ public class T6 {
 	}
 
 	public static void Ejercicio2() {
-		try {
-			String ruta = JOptionPane.showInputDialog(null, "Introdude la ruta: ");
-			FileWriter fw = new FileWriter(ruta);
-			FileReader fr = new FileReader(ruta);
+		String ruta = JOptionPane.showInputDialog("Introduce la ruta del fichero: ");
+		String texto = JOptionPane.showInputDialog("Introduce el texto que quieras escribir en el fichero: ");
+		escribirFichero(ruta, texto);
+		mostrarFicheroMay(ruta);
+	}
 
-			fw.write(text());
-			fw.close();
-			mayusMinus();
-			// No entiendo porque con el buffered no me crea el archivo y me salta error
-			// ?=???=??
-
-//			BufferedReader br = new BufferedReader(new FileReader(ruta));
-//			BufferedWriter bw = new BufferedWriter(new FileWriter(ruta));
-
+	public static void escribirFichero(String nomFich, String texto) {
+		try (FileWriter fw = new FileWriter(nomFich)) {
+			fw.write(texto);
 		} catch (IOException e) {
-			System.out.println("No se ha encontrado el archivo: " + e.getMessage());
+			System.out.println("Problemas en la escritura E/S " + e);
 		}
 	}
 
-	public static String text() {
-		String text = JOptionPane.showInputDialog(null, "Introduce el contenido del archivo: ");
-		System.out.println(text);
-		return text;
-	}
-
-	public static void mayusMinus() {
-		String aux = text();
-		int tamanho = text().length();
-		for (int i = 0; i < tamanho; i++) {
-			if (Character.isLowerCase(aux.charAt(i))) {
-				System.out.println(Character.toUpperCase(aux.charAt(i)));
-			} else { 
-				System.out.println(Character.toLowerCase(aux.charAt(i)));
+	public static void mostrarFicheroMay(String nomFich) {
+		try (FileReader fr = new FileReader(nomFich)) {
+			int valor = fr.read();
+			while (valor != -1) {
+				char caracter = (char) valor;
+				if (caracter >= 97 && caracter <= 122) {
+					caracter -= 32;
+				} else if (caracter >= 65 && caracter <= 90) {
+					caracter += 32;
+				}
+				System.out.print(caracter);
+				valor = fr.read();
 			}
+			fr.close();
+		} catch (IOException e) {
+			System.out.println("Problema con la E/S " + e);
 		}
 	}
 }
