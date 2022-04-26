@@ -8,6 +8,7 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value="DIRECCIÓN"/>
 		<list key="findhistory">
+			<item value="import java.io.BufferedReader;"/>
 			<item value="DIRECCIÓN"/>
 			<item value="cp"/>
 		</list>
